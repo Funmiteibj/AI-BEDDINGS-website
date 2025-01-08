@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Beddings - Luxurious E-commerce</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-sans bg-gray-100">
+
+    <!-- Header Section -->
+    <header class="bg-stone-500 text-white">
+        <div class="container mx-auto px-4 flex justify-between items-center py-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="ai white logo.jpeg" alt="AI Beddings Logo" class="h-12 mr-2 rounded-full">
+                <h1 class="text-lg font-bold">AI Beddings</h1>
+            </div>
+
+            <!-- Hamburger Menu Button (for mobile) -->
+            <button id="menuButton" class="block md:hidden text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav id="nav-links" class="hidden md:flex space-x-6">
+                <a href="#" class="hover:bg-stone-700 px-3 py-2 rounded">Home</a>
+                <a href="#" class="hover:bg-stone-700 px-3 py-2 rounded">Products</a>
+                <a href="#" class="hover:bg-stone-700 px-3 py-2 rounded">About</a>
+                <a href="#" class="hover:bg-stone-700 px-3 py-2 rounded">Contact</a>
+            </nav>
+
+            <!-- Cart Icon in Header -->
+            <div class="relative">
+                <button onclick="showCart()" class="text-white text-3xl">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-icon"
+                        class="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-2 py-1">
+                        0
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Links -->
+        <div id="mobileMenu" class="hidden bg-stone-800 md:hidden flex flex-col items-center space-y-4 py-4">
+            <a href="#" class="hover:bg-stone-700 px-4 py-2 rounded">Home</a>
+            <a href="#" class="hover:bg-stone-700 px-4 py-2 rounded">Products</a>
+            <a href="#" class="hover:bg-stone-700 px-4 py-2 rounded">About</a>
+            <a href="#" class="hover:bg-stone-700 px-4 py-2 rounded">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-[80vh] flex items-center justify-center text-center text-white"
+        style="background-image: url('https://img.freepik.com/free-photo/luxurious-modern-bedroom-with-comfortable-bedding-elegant-decor-generated-by-ai_188544-29870.jpg?t=st=1736337584~exp=1736341184~hmac=023ee3dffdf5832fc23a6cb537daf17eb8bf6336db5873e0af3eb3aa6eb3295d&w=1380');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative z-10 p-6">
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">Luxurious Comfort Awaits</h1>
+            <p class="text-xl md:text-2xl mb-6">Discover premium bedding collections for your dream home.</p>
+            <a href="#products"
+                class="bg-green-600 text-white text-xl font-semibold px-8 py-4 rounded-full shadow-md hover:bg-green-700 transition duration-300">Shop
+                Now</a>
+        </div>
+    </section>
+
+
+    <!-- Products Section -->
+    <section id="products" class="container mx-auto py-10">
+        <h2 class="text-3xl font-bold text-center mb-8">Our Products</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+
+            <!-- Product Card -->
+
+            <div class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out">
+                <img src="white duvet.webp" alt="luxury" class="w-full h-fit object-cover">
+                <div class="p-4">
+                    <h3 class="product-name text-lg font-semibold">Luxury Collections</h3>
+                    <p class="product-price text-gray-700">#70000</p>
+                    <button class="add-to-cart mt-4 w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <div
+                class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out">
+                <img src="image1.jpeg" alt="Duvet" class="w-full h-fit object-cover">
+                <div class="p-4">
+                    <h3 class="product-name text-lg font-semibold">Duvet Set Collection</h3>
+                    <p class="product-price text-gray-700">#30000</p>
+                    <button class="add-to-cart mt-4 w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <!-- Additional Product Cards -->
+
+            <div
+                class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out">
+                <img src="image2.jpeg" alt="Duvetcover" class="w-full h-fit object-cover">
+                <div class="p-4">
+                    <h3 class="product-name text-lg font-semibold">Duvet Cover Collection</h3>
+                    <p class="product-price text-gray-700">#25000</p>
+                    <button class="add-to-cart mt-4 w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+
+            <div
+                class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out">
+                <img src="baby cot.jpg" alt="Babycot" class="w-full h-fit object-cover">
+                <div class="p-4">
+                    <h3 class="product-name text-lg font-semibold">Baby Cot Collections</h3>
+                    <p class="product-price text-gray-700">#15000</p>
+                    <button class="add-to-cart mt-4 w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <div
+                class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out">
+                <img src="bedsheet.jpeg" alt="Bedsheet" class="w-full h-fit object-cover">
+                <div class="p-4">
+                    <h3 class="product-name text-lg font-semibold">Bedsheet Collection</h3>
+                    <p class="product-price text-gray-700">#15000</p>
+                    <button class="add-to-cart mt-4 w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <div
+                class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out">
+                <img src="Xl.jpeg" alt="XLbedsheet" class="w-full h-fit object-cover">
+                <div class="p-4">
+                    <h3 class="product-name text-lg font-semibold">XL Bedsheet Collection</h3>
+                    <p class="product-price text-gray-700">#20000</p>
+                    <button class="add-to-cart mt-4 w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <div
+                class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out">
+                <img src="pillow.jpg" alt="Pillow" class="w-full h-fit object-cover">
+                <div class="p-4">
+                    <h3 class="product-name text-lg font-semibold">Soft Fibre Pillow</h3>
+                    <p class="product-price text-gray-700">#6000</p>
+                    <button class="add-to-cart mt-4 w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <div
+                class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out">
+                <img src="towel.jpeg" alt="Towel" class="w-full h-fit object-cover">
+                <div class="p-4">
+                    <h3 class="product-name text-lg font-semibold">Towel Collection</h3>
+                    <p class="product-price text-gray-700">#12000</p>
+                    <button class="add-to-cart mt-4 w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="fixed inset-0 bg-white bg-opacity-50 hidden z-50 flex justify-center items-center">
+        <div class="bg-white rounded-lg shadow-lg w-96 p-6 relative">
+            <h2 class="text-xl font-bold mb-4">Shopping Cart</h2>
+            <div id="cartItems" class="space-y-4">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="mt-4">
+                <p id="cartTotal" class="text-lg font-bold">Total: #0</p>
+                <button id="checkoutButton"
+                    class="bg-green-500 text-white px-4 py-2 rounded-lg mt-2 hover:bg-green-600">
+                    Checkout
+                </button>
+            </div>
+            <button id="closeCart" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+                &times;
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Section -->
+    <footer class="bg-stone-500 text-white py-10">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- About Section -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">About AI Beddings</h3>
+                <p class="text-sm leading-relaxed">We provide premium bedding collections to make your home feel
+                    luxurious
+                    and comfortable. Our products are crafted with care and quality to ensure your best sleep
+                    experience.
+                </p>
+            </div>
+
+            <!-- Links Section -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-gray-400">Home</a></li>
+                    <li><a href="#" class="hover:text-gray-400">Products</a></li>
+                    <li><a href="#" class="hover:text-gray-400">About Us</a></li>
+                    <li><a href="#" class="hover:text-gray-400">Contact</a></li>
+                    <li><a href="#" class="hover:text-gray-400">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Subscribe to Our Newsletter</h3>
+                <p class="text-sm mb-4">Stay updated on the latest products and promotions!</p>
+                <form action="#" method="POST"
+                    class="flex flex-col sm:flex-row items-center sm:items-stretch space-y-4 sm:space-y-0 sm:space-x-2">
+                    <input type="email" placeholder="Enter your email"
+                        class="w-full sm:w-auto px-4 py-2 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        required>
+                </form>
+                <button type="submit"
+                    class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 w-full sm:w-auto">Subscribe</button>
+            </div>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="mt-8 flex justify-center space-x-4">
+            <a href="#" class="text-gray-300 hover:text-gray-500"><i class="fab fa-facebook-f text-lg"></i></a>
+            <a href="#" class="text-gray-300 hover:text-gray-500"><i class="fab fa-twitter text-lg"></i></a>
+            <a href="#" class="text-gray-300 hover:text-gray-500"><i class="fab fa-instagram text-lg"></i></a>
+            <a href="#" class="text-gray-300 hover:text-gray-500"><i class="fab fa-pinterest text-lg"></i></a>
+        </div>
+
+        <!-- Footer Bottom Section -->
+        <div class="text-center mt-4 text-sm text-white-400">
+            <p>&copy; 2025 AI Beddings. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+    <script>
+        //<!-- JavaScript for Toggle -->
+
+
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // Retrieve the cart from localStorage or initialize an empty cart
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // DOM elements
+        const cartModal = document.getElementById("cartModal");
+        const cartItems = document.getElementById("cartItems");
+        const cartTotal = document.getElementById("cartTotal");
+        const closeCart = document.getElementById("closeCart");
+        const cartIcon = document.getElementById("cart-icon");
+
+        // Add items to the cart
+        document.querySelectorAll(".add-to-cart").forEach(button => {
+            button.addEventListener("click", () => {
+                const productCard = button.closest(".product-card");
+                const name = productCard.querySelector(".product-name").innerText;
+                const price = parseFloat(productCard.querySelector(".product-price").innerText.replace("#", ""));
+
+                const existingItem = cart.find(item => item.name === name);
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({ name, price, quantity: 1 });
+                }
+
+                // Save the updated cart to localStorage
+                localStorage.setItem("cart", JSON.stringify(cart));
+
+                updateCart();
+            });
+        });
+
+        // Update the cart UI
+        function updateCart() {
+            cartItems.innerHTML = "";
+            let total = 0;
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                const cartItem = document.createElement("div");
+                cartItem.classList.add("flex", "justify-between", "items-center", "border-b", "pb-2");
+                cartItem.innerHTML = `
+    <span>${item.name} x${item.quantity}</span>
+    <span>#${item.price * item.quantity}</span>
+    <button class="remove-item text-red-500" data-name="${item.name}">&times;</button>
+    `;
+                cartItems.appendChild(cartItem);
+            });
+
+            cartTotal.innerText = `Total: #${total.toFixed(2)}`;
+            cartIcon.innerText = cart.length; // Update the cart icon count
+        }
+
+        // Remove items from the cart
+        cartItems.addEventListener("click", (e) => {
+            if (e.target.classList.contains("remove-item")) {
+                const itemName = e.target.dataset.name;
+                cart = cart.filter(item => item.name !== itemName); // Remove item from cart
+                localStorage.setItem("cart", JSON.stringify(cart)); // Update localStorage
+                updateCart();
+            }
+        });
+
+        // Close the cart modal
+        closeCart.addEventListener("click", () => {
+            cartModal.classList.add("hidden");
+        });
+
+        // Checkout process (simple simulation)
+        document.getElementById("checkoutButton").addEventListener("click", () => {
+            alert("Proceeding to checkout! (Simulated)");
+            // You can redirect to a checkout page or clear the cart
+            localStorage.removeItem("cart"); // Clear cart after checkout
+            cart = [];
+            updateCart();
+        });
+
+        // Show cart modal
+        function showCart() {
+            cartModal.classList.remove("hidden");
+        }
+
+        // Load the cart when the page is loaded
+        updateCart();
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
