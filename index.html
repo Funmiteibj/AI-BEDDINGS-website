@@ -202,39 +202,44 @@
         </div>
     </div>
 
-    
+
 
 
 
     <!-- About Us Section -->
-<section id="aboutus" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-        <!-- About Text Section -->
-        <div class="md:w-1/2 mb-8 md:mb-0">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">About AI Beddings</h2>
-            <p class="text-lg text-gray-700 mb-4">
-                At AI Beddings, we provide premium bedding collections to make your home feel luxurious and comfortable. 
-                Our products are crafted with care and quality to ensure the best sleep experience for our customers. 
-                We believe that everyone deserves a peaceful night’s rest in a beautiful, well-designed space.
-            </p>
-            <p class="text-lg text-gray-700">
-                Founded by our visionary CEO, Funmilayo Ibijola, AI Beddings has rapidly grown to become one of the most trusted 
-                brands in the bedding industry. With a commitment to quality and innovation, we strive to create products 
-                that offer unmatched comfort and style at affordable rate.
-            </p>
-        </div>
+    <section id="aboutus" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <!-- About Text Section -->
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">About AI Beddings</h2>
+                <p class="text-lg text-gray-700 mb-4">
+                    At AI Beddings, we provide premium bedding collections to make your home feel luxurious and
+                    comfortable.
+                    Our products are crafted with care and quality to ensure the best sleep experience for our
+                    customers.
+                    We believe that everyone deserves a peaceful night’s rest in a beautiful, well-designed space.
+                </p>
+                <p class="text-lg text-gray-700">
+                    Founded by our visionary CEO, Funmilayo Ibijola, AI Beddings has rapidly grown to become one of the
+                    most trusted
+                    brands in the bedding industry. With a commitment to quality and innovation, we strive to create
+                    products
+                    that offer unmatched comfort and style at affordable rate.
+                </p>
+            </div>
 
-        <!-- CEO Image Section -->
-        <div class="md:w-1/2 flex flex-col items-center">
-            <img src="profession pix.png" alt="CEO Image" class="w-48 h-48 rounded-full object-cover shadow-lg border-4 border-stone-500 mb-4">
-            <!-- CEO Name and Position -->
-            <div class="text-center">
-                <p class="text-xl font-semibold text-gray-800">Funmilayo Ibijola</p>
-                <p class="text-lg text-gray-600">CEO & Founder</p>
+            <!-- CEO Image Section -->
+            <div class="md:w-1/2 flex flex-col items-center">
+                <img src="profession pix.png" alt="CEO Image"
+                    class="w-48 h-48 rounded-full object-cover shadow-lg border-4 border-stone-500 mb-4">
+                <!-- CEO Name and Position -->
+                <div class="text-center">
+                    <p class="text-xl font-semibold text-gray-800">Funmilayo Ibijola</p>
+                    <p class="text-lg text-gray-600">CEO & Founder</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
@@ -329,8 +334,8 @@
         menuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-        // Retrieve the cart from localStorage or initialize an empty cart
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
 
         // DOM elements
         const cartModal = document.getElementById("cartModal");
@@ -338,6 +343,9 @@
         const cartTotal = document.getElementById("cartTotal");
         const closeCart = document.getElementById("closeCart");
         const cartIcon = document.getElementById("cart-icon");
+
+        // Cart array to hold cart items
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
         // Add items to the cart
         document.querySelectorAll(".add-to-cart").forEach(button => {
@@ -364,28 +372,44 @@
         function updateCart() {
             cartItems.innerHTML = "";
             let total = 0;
+            let totalQuantity = 0; // To track total quantity
+
             cart.forEach(item => {
                 total += item.price * item.quantity;
+                totalQuantity += item.quantity;
+
                 const cartItem = document.createElement("div");
                 cartItem.classList.add("flex", "justify-between", "items-center", "border-b", "pb-2");
                 cartItem.innerHTML = `
-    <span>${item.name} x${item.quantity}</span>
-    <span>#${item.price * item.quantity}</span>
-    <button class="remove-item text-red-500" data-name="${item.name}">&times;</button>
-    `;
+            <span>${item.name} x${item.quantity}</span>
+            <span>#${(item.price * item.quantity).toFixed(2)}</span>
+            <button class="remove-item text-red-500" data-name="${item.name}">&times;</button>
+        `;
                 cartItems.appendChild(cartItem);
             });
 
             cartTotal.innerText = `Total: #${total.toFixed(2)}`;
-            cartIcon.innerText = cart.length; // Update the cart icon count
+            cartIcon.innerText = totalQuantity; // Update the cart icon with total quantity
         }
 
         // Remove items from the cart
         cartItems.addEventListener("click", (e) => {
             if (e.target.classList.contains("remove-item")) {
                 const itemName = e.target.dataset.name;
-                cart = cart.filter(item => item.name !== itemName); // Remove item from cart
-                localStorage.setItem("cart", JSON.stringify(cart)); // Update localStorage
+
+                // Find the item in the cart
+                const itemIndex = cart.findIndex(item => item.name === itemName);
+                if (itemIndex !== -1) {
+                    // Decrease quantity or remove item
+                    if (cart[itemIndex].quantity > 1) {
+                        cart[itemIndex].quantity--;
+                    } else {
+                        cart.splice(itemIndex, 1);
+                    }
+                }
+
+                // Update localStorage and UI
+                localStorage.setItem("cart", JSON.stringify(cart));
                 updateCart();
             }
         });
@@ -395,15 +419,6 @@
             cartModal.classList.add("hidden");
         });
 
-        // Checkout process (simple simulation)
-        document.getElementById("checkoutButton").addEventListener("click", () => {
-            alert("Proceeding to checkout! (Simulated)");
-            // You can redirect to a checkout page or clear the cart
-            localStorage.removeItem("cart"); // Clear cart after checkout
-            cart = [];
-            updateCart();
-        });
-
         // Show cart modal
         function showCart() {
             cartModal.classList.remove("hidden");
@@ -411,6 +426,7 @@
 
         // Load the cart when the page is loaded
         updateCart();
+
 
 
     </script>
