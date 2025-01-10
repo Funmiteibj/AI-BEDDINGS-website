@@ -29,10 +29,10 @@
 
             <!-- Navigation Links -->
             <nav id="nav-links" class="hidden md:flex space-x-6">
-                <a href="#" class="hover:bg-stone-700 px-3 py-2 rounded">Home</a>
-                <a href="#" class="hover:bg-stone-700 px-3 py-2 rounded">Products</a>
-                <a href="#" class="hover:bg-stone-700 px-3 py-2 rounded">About</a>
-                <a href="#" class="hover:bg-stone-700 px-3 py-2 rounded">Contact</a>
+                <a href="#home" class="hover:bg-stone-700 px-3 py-2 rounded">Home</a>
+                <a href="#products" class="hover:bg-stone-700 px-3 py-2 rounded">Products</a>
+                <a href="#aboutus" class="hover:bg-stone-700 px-3 py-2 rounded">About</a>
+                <a href="#contactus" class="hover:bg-stone-700 px-3 py-2 rounded">Contact</a>
             </nav>
 
             <!-- Cart Icon in Header -->
@@ -40,7 +40,7 @@
                 <button onclick="showCart()" class="text-white text-3xl">
                     <i class="fas fa-shopping-cart"></i>
                     <span id="cart-icon"
-                        class="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-2 py-1">
+                        class="absolute top-5 left-5 bg-red-500 text-white text-xs rounded-full px-2 py-1">
                         0
                     </span>
                 </button>
@@ -50,14 +50,15 @@
         <!-- Mobile Navigation Links -->
         <div id="mobileMenu" class="hidden bg-stone-800 md:hidden flex flex-col items-center space-y-4 py-4">
             <a href="#" class="hover:bg-stone-700 px-4 py-2 rounded">Home</a>
-            <a href="#" class="hover:bg-stone-700 px-4 py-2 rounded">Products</a>
-            <a href="#" class="hover:bg-stone-700 px-4 py-2 rounded">About</a>
+            <a href="#products" class="hover:bg-stone-700 px-4 py-2 rounded">Products</a>
+            <a href="aboutus" class="hover:bg-stone-700 px-4 py-2 rounded">About</a>
             <a href="#" class="hover:bg-stone-700 px-4 py-2 rounded">Contact</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative bg-cover bg-center h-[80vh] flex items-center justify-center text-center text-white"
+    <section id="home"
+        class="relative bg-cover bg-center h-[80vh] flex items-center justify-center text-center text-white"
         style="background-image: url('beddingbg.jpeg');">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
         <div class="relative z-10 p-6">
@@ -72,6 +73,8 @@
     </section>
 
 
+
+
     <!-- Products Section -->
     <section id="products" class="container mx-auto py-10">
         <h2 class="text-3xl font-bold text-center mb-8">Our Products</h2>
@@ -80,9 +83,9 @@
 
             <!-- Product Card -->
 
-            <div
-                class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out border">
-                <img src="white duvet.webp" alt="luxury" class="w-full h-auto object-cover">
+            <div class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out border"
+                data-category="luxury">
+                <img src="white duvet.webp" alt="luxury" class="w-full h-auto object-cover category-image">
                 <div class="p-4">
                     <h3 class="product-name text-lg font-semibold">Luxury Collections</h3>
                     <p class="product-price text-gray-700">#70000</p>
@@ -91,9 +94,9 @@
                 </div>
             </div>
 
-            <div
-                class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out">
-                <img src="image1.jpeg" alt="Duvet" class="w-full h-auto object-cover">
+            <div class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out"
+                data-category="duvet">
+                <img src="image1.jpeg" alt="Duvet" class="w-full h-auto object-cover category-image">
                 <div class="p-4">
                     <h3 class="product-name text-lg font-semibold">Duvet Set Collection</h3>
                     <p class="product-price text-gray-700">#30000</p>
@@ -104,9 +107,9 @@
 
             <!-- Additional Product Cards -->
 
-            <div
-                class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out">
-                <img src="image2.jpeg" alt="Duvetcover" class="w-full h-auto object-cover">
+            <div class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out"
+                data-category="duvetcover">
+                <img src="image2.jpeg" alt="Duvetcover" class="w-full h-auto object-cover category-image">
                 <div class="p-4">
                     <h3 class="product-name text-lg font-semibold">Duvet Cover Collection</h3>
                     <p class="product-price text-gray-700">#25000</p>
@@ -116,9 +119,9 @@
             </div>
 
 
-            <div
-                class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out">
-                <img src="baby cot.jpg" alt="Babycot" class="w-full h-auto object-cover">
+            <div class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out"
+                data-category="babycot">
+                <img src="baby cot.jpg" alt="Babycot" class="w-full h-auto object-cover category-image">
                 <div class="p-4">
                     <h3 class="product-name text-lg font-semibold">Baby Cot Collections</h3>
                     <p class="product-price text-gray-700">#15000</p>
@@ -127,9 +130,9 @@
                 </div>
             </div>
 
-            <div
-                class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out">
-                <img src="bedsheet.jpeg" alt="Bedsheet" class="w-full h-auto object-cover">
+            <div class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out"
+                data-category="bedsheet">
+                <img src="bedsheet.jpeg" alt="Bedsheet" class="w-full h-auto object-cover category-image">
                 <div class="p-4">
                     <h3 class="product-name text-lg font-semibold">Bedsheet Collection</h3>
                     <p class="product-price text-gray-700">#15000</p>
@@ -138,9 +141,9 @@
                 </div>
             </div>
 
-            <div
-                class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out">
-                <img src="Xl.jpeg" alt="XLbedsheet" class="w-full h-auto object-cover">
+            <div class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out"
+                data-category="xlbedshet">
+                <img src="Xl.jpeg" alt="XLbedsheet" class="w-full h-auto object-cover category-image">
                 <div class="p-4">
                     <h3 class="product-name text-lg font-semibold">XL Bedsheet Collection</h3>
                     <p class="product-price text-gray-700">#20000</p>
@@ -149,9 +152,9 @@
                 </div>
             </div>
 
-            <div
-                class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out">
-                <img src="pillow.jpg" alt="Pillow" class="w-full h-auto object-cover">
+            <div class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out"
+                data-category="pillow">
+                <img src="pillow.jpg" alt="Pillow" class="w-full h-auto object-cover category-image">
                 <div class="p-4">
                     <h3 class="product-name text-lg font-semibold">Soft Fibre Pillow</h3>
                     <p class="product-price text-gray-700">#6000</p>
@@ -160,9 +163,9 @@
                 </div>
             </div>
 
-            <div
-                class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out">
-                <img src="towel.jpeg" alt="Towel" class="w-full h-auto object-cover">
+            <div class="product-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out"
+                data-category="towel">
+                <img src="towel.jpeg" alt="Towel" class="w-full h-auto object-cover category-image">
                 <div class="p-4">
                     <h3 class="product-name text-lg font-semibold">Towel Collection</h3>
                     <p class="product-price text-gray-700">#12000</p>
@@ -173,6 +176,10 @@
 
         </div>
     </section>
+
+
+
+
 
 
     <!-- Cart Modal -->
@@ -195,13 +202,39 @@
         </div>
     </div>
 
+    
 
 
 
+    <!-- About Us Section -->
+<section id="aboutus" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+        <!-- About Text Section -->
+        <div class="md:w-1/2 mb-8 md:mb-0">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">About AI Beddings</h2>
+            <p class="text-lg text-gray-700 mb-4">
+                At AI Beddings, we provide premium bedding collections to make your home feel luxurious and comfortable. 
+                Our products are crafted with care and quality to ensure the best sleep experience for our customers. 
+                We believe that everyone deserves a peaceful night’s rest in a beautiful, well-designed space.
+            </p>
+            <p class="text-lg text-gray-700">
+                Founded by our visionary CEO, Funmilayo Ibijola, AI Beddings has rapidly grown to become one of the most trusted 
+                brands in the bedding industry. With a commitment to quality and innovation, we strive to create products 
+                that offer unmatched comfort and style at affordable rate.
+            </p>
+        </div>
 
-
-
-
+        <!-- CEO Image Section -->
+        <div class="md:w-1/2 flex flex-col items-center">
+            <img src="profession pix.png" alt="CEO Image" class="w-48 h-48 rounded-full object-cover shadow-lg border-4 border-green-500 mb-4">
+            <!-- CEO Name and Position -->
+            <div class="text-center">
+                <p class="text-xl font-semibold text-gray-800">Funmilayo Ibijola</p>
+                <p class="text-lg text-gray-600">CEO & Founder</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
@@ -211,59 +244,73 @@
 
     <!-- Footer Section -->
     <footer class="bg-stone-500 text-white py-10">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- About Section -->
-            <div>
-                <h3 class="text-lg font-semibold mb-4">About AI Beddings</h3>
-                <p class="text-sm leading-relaxed">We provide premium bedding collections to make your home feel
-                    luxurious
-                    and comfortable. Our products are crafted with care and quality to ensure your best sleep
-                    experience.
-                </p>
-            </div>
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
 
             <!-- Links Section -->
             <div>
                 <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-gray-400">Home</a></li>
-                    <li><a href="#" class="hover:text-gray-400">Products</a></li>
-                    <li><a href="#" class="hover:text-gray-400">About Us</a></li>
-                    <li><a href="#" class="hover:text-gray-400">Contact</a></li>
-                    <li><a href="#" class="hover:text-gray-400">Privacy Policy</a></li>
+                    <li><a href="#home" class="hover:text-gray-300">Home</a></li>
+                    <li><a href="#products" class="hover:text-gray-300">Products</a></li>
+                    <li><a href="#aboutus" class="hover:text-gray-300">About Us</a></li>
+                    <li><a href="#contactus" class="hover:text-gray-300">Contact</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div id="contactus">
+                <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                <ul class="space-y-2">
+                    <li><i class="fas fa-phone-alt"></i> <a href="tel:+2347064752299" class="hover:text-gray-300">+234
+                            (0)70 6475 2299</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:support@aibeddings.com"
+                            class="hover:text-gray-300">support@aibeddings.com</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> 28 Idera Street, Onipan, Lagos, Nigeria</li>
                 </ul>
             </div>
 
             <!-- Newsletter Section -->
             <div>
                 <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
-                <form action="#" class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                <form action="#" class="space-y-4">
                     <input type="email" placeholder="Enter your email"
-                        class="px-4 py-2 rounded-lg text-gray-700 w-full sm:w-auto">
+                        class="w-full px-4 py-2 rounded-lg text-gray-700 focus:outline-none focus:ring focus:ring-green-500">
                     <button type="submit"
-                        class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
+                        class="w-full bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
                         Subscribe
                     </button>
                 </form>
+                <p class="text-sm mt-2 text-gray-300">Stay updated with our latest offers and products.</p>
             </div>
-        </div>
-        <div class="mt-8 text-center text-sm text-gray-400">
-            &copy; 2025 AI Beddings. All rights reserved.
         </div>
 
         <!-- Social Media Section -->
-        <div class="mt-8 flex justify-center space-x-4">
-            <a href="#" class="text-gray-300 hover:text-gray-500"><i class="fab fa-facebook-f text-lg"></i></a>
-            <a href="#" class="text-gray-300 hover:text-gray-500"><i class="fab fa-twitter text-lg"></i></a>
-            <a href="#" class="text-gray-300 hover:text-gray-500"><i class="fab fa-instagram text-lg"></i></a>
-            <a href="#" class="text-gray-300 hover:text-gray-500"><i class="fab fa-pinterest text-lg"></i></a>
+        <div class="mt-8 flex justify-center space-x-6">
+            <a href="#" aria-label="Facebook" class="text-gray-300 hover:text-gray-500"><i
+                    class="fab fa-facebook-f text-xl"></i></a>
+            <a href="#" aria-label="Twitter" class="text-gray-300 hover:text-gray-500"><i
+                    class="fab fa-twitter text-xl"></i></a>
+            <a href="#" aria-label="Instagram" class="text-gray-300 hover:text-gray-500"><i
+                    class="fab fa-instagram text-xl"></i></a>
+            <a href="#" aria-label="Pinterest" class="text-gray-300 hover:text-gray-500"><i
+                    class="fab fa-pinterest text-xl"></i></a>
         </div>
 
-        <!-- Footer Bottom Section -->
-        <div class="text-center mt-4 text-sm text-white-400">
-            <p>&copy; 2025 AI Beddings. All rights reserved.</p>
+        <!-- Back-to-Top Button -->
+        <div class="mt-8 text-center">
+            <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+                class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
+                Back to Top
+            </button>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="mt-8 text-center text-sm text-gray-400">
+            &copy; 2025 AI Beddings. All rights reserved. | Designed with ♥ in Lagos, Nigeria
         </div>
     </footer>
+
 
 
 
